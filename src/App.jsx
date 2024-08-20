@@ -1,12 +1,14 @@
 import Header from './components/Header';
 import HomeMain from './components/HomeMain';
+import Footer from './components/Footer';
 
 function App() {
 
   return (
     <>
-      <Header style="z-index: 1;"/>
-      <HomeMain style="z-index: 0;"/>
+      <Header />
+      <HomeMain />
+      <Footer />
     </>
   )
 }

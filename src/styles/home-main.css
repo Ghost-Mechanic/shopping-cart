@@ -121,6 +121,7 @@ main {
         width: 600px;
         border: solid 2px #22313f;
         border-radius: 12px;
+        margin-bottom: 20px;
     }
 }
 
