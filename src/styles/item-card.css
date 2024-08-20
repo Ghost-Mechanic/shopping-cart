@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.item-card {
+    background-color: white;
+    border: solid 1px #22313f;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-title {
+    color: #22313f;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25em;
+}
+
+.item-image {
+    width: 80px;
+}
+
+.price {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.item-button {
+    background-color: #22313f;
+    height: 80%;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.add-button {
+    background-color: #22313f;
+    font-size: 0.6em;
+    font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 1024px) {
+    .item-card {
+        transition: transform .2s;
+    }
+
+    .item-card:hover {
+        transform: scale(1.10);
+    }
+
+    .price {
+        font-size: 1.2em;
+    }
+
+    .item-button {
+        width: 50%;
+    }
+
+    .add-button {
+        width: 80%;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1920px) {
+    .card-title {
+        padding: 8px;
+    }
+}
