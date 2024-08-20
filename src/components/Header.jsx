@@ -1,5 +1,6 @@
 import '../styles/header.css';
 import cartImage from '../assets/shopping-cart.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -9,10 +10,14 @@ function Header() {
                 <nav className="navigation-buttons">
                     <ul>
                         <li>
-                            <button className="home-button">Home</button>
+                            <Link to="/">
+                                <button className="home-button">Home</button>
+                            </Link>
                         </li>
                         <li>
-                            <button className="shop-button">Shop</button>
+                            <Link to="/shop">
+                                <button className="shop-button">Shop</button>
+                            </Link>
                         </li>
                         <li>
                             <button className="cart-button">

@@ -58,10 +58,6 @@ button:active {
     background-color: #22313f;
 }
 
-.home-button {
-    border: solid 2px white;
-}
-
 .cart {
     width: 24px;
     filter: invert(1);
