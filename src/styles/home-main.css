@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+main {
+    background-color: #e4f1fe;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tagline {
+    margin-top: 0;
+    padding-top: 12px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.2em;
+    color: #22313f;
+}
+
+.tagline-sentence {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    color: #22313f;
+}
+
+.smile-image {
+    border: solid 2px #22313f;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.about {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
+}
+
+.about-paragraph {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    color: #22313f;
+}
+
+.satisfaction {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
+}
+
+.satisfaction-paragraph {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
+}
+
+.tagline-large-container {
+    display: none;
+}
+
+.tagline-larger-container {
+    display: none;
+}
+
+.group {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .tagline,
+    .tagline-sentence,
+    .smile-image {
+        display: none;
+    }
+
+    .tagline-large-container {
+        display: block;
+        padding: 20px;
+    }
+
+    .tagline-and-sentence {
+        display: flex;
+        gap: 8px;
+    }
+
+    .tagline-large {
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 3em;
+        color: #22313f;
+    }
+
+    .tagline-sentence-large {
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        color: #22313f;
+        font-size: 2em;
+    }
+
+    .smile-image-large {
+        border: solid 2px #22313f;
+        border-radius: 12px;
+        width: 400px;
+    }
+
+    .about {
+        font-size: 2.5em;
+    }
+
+    .about-paragraph {
+        font-size: 1.8em;
+    }
+
+    .satisfaction {
+        font-size: 2em;
+    }
+
+    .group {
+        display: block;
+        width: 600px;
+        border: solid 2px #22313f;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .tagline-large-container,
+    .about,
+    .about-paragraph {
+        display: none;
+    }
+
+    .tagline-larger-container {
+        display: block;
+        padding: 32px;
+        width: 80%;
+    }
+
+    .tagline-and-image {
+        display: flex;
+        gap: 24px;
+    }
+
+    .tagline-and-about {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .tagline-larger {
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 3em;
+        color: #22313f;
+    }
+
+    .tagline-sentence-larger {
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        color: #22313f;
+        font-size: 2em;
+    }
+
+    .smile-image-larger {
+        border: solid 2px #22313f;
+        border-radius: 12px;
+        width: 400px;
+    }
+
+    .about-larger {
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        color: #22313f;
+        font-size: 2.5em;
+    }
+    
+    .about-paragraph-larger {
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5em;
+        color: #22313f;
+    }
+}
