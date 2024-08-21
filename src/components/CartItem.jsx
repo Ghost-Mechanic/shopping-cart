@@ -1,7 +1,7 @@
 import '../styles/cart-item.css';
 import PropTypes from 'prop-types';
 
-function CartItem({ item }) {
+function CartItem({ item, handleDelete }) {
     return (
         <>
             <div className="cart-item-container">
@@ -13,7 +13,7 @@ function CartItem({ item }) {
                     <input type="number" value={item.quantity} min="0" max="10" />
                     <button className="cart-item-button">+</button>
                 </div>
-                <button className="remove-button">Remove from cart</button>
+                <button className="remove-button" onClick={() => handleDelete(item[0].id)}>Remove from cart</button>
             </div>
         </>
     )
@@ -21,6 +21,7 @@ function CartItem({ item }) {
 
 CartItem.propTypes = {
     item: PropTypes.array,
+    handleDelete: PropTypes.func,
 };
 
 export default CartItem;
