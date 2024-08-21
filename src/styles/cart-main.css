@@ -2,10 +2,10 @@
 
 main {
     background-color: #e4f1fe;
+    min-height: 70vh;
 }
 
 .empty-cart {
-    height: 70vh;
     font-family: "Open Sans", sans-serif;
     color: #22313f;
 }
@@ -22,6 +22,32 @@ main {
     text-align: center;
     font-family: "Open Sans", sans-serif;
     color: #22313f;
+}
+
+.cart-pricing {
+    border: none;
+    box-shadow: 0px 0px 4px black;
+    border-radius: 12px;
+    background-color: white;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
+    padding: 12px;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.cart-pricing * {
+    margin: 0;
+}
+
+.checkout {
+    border: solid 1px #22313f;
+    width: 80%;
+    border-radius: 16px;
+    background-color: #22313f;
 }
 
 @media (min-width: 768px) {

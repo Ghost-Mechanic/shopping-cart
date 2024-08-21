@@ -5,6 +5,11 @@ import '../styles/cart-main.css';
 function CartMain() {
     const [cart] = useOutletContext();
 
+    const subtotal = cart.reduce((accumulator, cartItem) => 
+        accumulator + (cartItem.quantity * cartItem[0].price), 0).toFixed(2);
+
+    const tax = (subtotal * 0.10).toFixed(2);
+
     cart.map((item) => {
         console.log(item[0].id);
         console.log(item[0].title);
@@ -23,6 +28,14 @@ function CartMain() {
                     </div>
                     : cart.map((item) => <CartItem key={item[0].id} item={item} />)}
                 </div>
+                {cart.length !== 0 ? 
+                <div className="cart-pricing">
+                    <h2>Subtotal: ${subtotal}</h2>
+                    <h2>Tax: ${tax}</h2>
+                    <h2>Shipping: FREE</h2>
+                    <h2>Total: ${(Number(subtotal) + Number(tax)).toFixed(2)}</h2>
+                    <button className="checkout">Checkout</button>
+                </div> : null}
             </main>
         </>
     )
