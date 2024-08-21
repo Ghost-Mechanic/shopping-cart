@@ -58,6 +58,13 @@ button:active {
     background-color: #22313f;
 }
 
+.cart-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .cart {
     width: 24px;
     filter: invert(1);

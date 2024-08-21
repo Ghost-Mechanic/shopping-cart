@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/item-card.css';
 
-function ItemCard({ item }) {
+function ItemCard({ item, handleAdd }) {
     const [numItems, setNumItems] = useState(0);
 
     function handleChangeNumItems(e) {
@@ -32,10 +33,20 @@ function ItemCard({ item }) {
                     <input type="number" value={numItems} min="0" max="10" onChange={(e) => handleChangeNumItems(e)} onBlur={handleBlur} />
                     <button className="item-button" onClick={() => numItems < 10 && numItems >= 0 ? setNumItems(Number(numItems) + 1) : null}>+</button>
                 </div>
-                <button className="add-button">Add to cart</button>
+                <button className="add-button" onClick={() => handleAdd(item.id, numItems)}>Add to cart</button>
             </div>
         </div>
     )
 }
+
+ItemCard.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }).isRequired,
+    handleAdd: PropTypes.func.isRequired,
+};
 
 export default ItemCard;

@@ -1,8 +1,15 @@
 import '../styles/header.css';
 import cartImage from '../assets/shopping-cart.png';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Header() {
+function Header({ cart }) {
+
+    // calculate the number of items in the cart
+    let numCartItems = 0;
+
+    cart.map((item) => numCartItems += item.quantity);
+
     return (
         <>
             <header>
@@ -22,6 +29,7 @@ function Header() {
                         <li>
                             <button className="cart-button">
                                 <img className="cart" src={cartImage} alt="Shopping Cart" />
+                                {numCartItems > 0 ? <p>{numCartItems}</p> : null}
                             </button>
                         </li>
                     </ul>
@@ -30,5 +38,9 @@ function Header() {
         </>
     )
 }
+
+Header.propTypes = {
+    cart: PropTypes.array,
+};
 
 export default Header;
