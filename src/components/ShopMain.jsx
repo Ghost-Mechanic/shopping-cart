@@ -12,7 +12,6 @@ function ShopMain() {
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=> {
-                console.log(json);
                 setProducts(json);
                 setLoading(false);
             })
@@ -29,9 +28,20 @@ function ShopMain() {
             return;
         }
 
-        let newItems = products.filter((product) => product.id === id);
-        setCart([...cart, {...newItems, quantity: quantity}]);
-        console.log(cart);
+        const itemIndex = cart.findIndex((item) => item[0].id === id);
+
+        // only update quantity if item already exists in cart
+        if (itemIndex !== -1) {
+            const newCart = cart.map((item, index) => 
+                index === itemIndex ? { ...item, quantity: item.quantity + quantity > 10 ? 10 : item.quantity + quantity}
+                : item
+            );
+            setCart(newCart);
+        }
+        else {
+            let newItems = products.filter((product) => product.id === id);
+            setCart([...cart, {...newItems, quantity: quantity}]);
+        }
     }
 
     return (

@@ -27,10 +27,12 @@ function Header({ cart }) {
                             </Link>
                         </li>
                         <li>
-                            <button className="cart-button">
-                                <img className="cart" src={cartImage} alt="Shopping Cart" />
-                                {numCartItems > 0 ? <p>{numCartItems}</p> : null}
-                            </button>
+                            <Link to="/cart">
+                                <button className="cart-button">
+                                    <img className="cart" src={cartImage} alt="Shopping Cart" />
+                                    {numCartItems > 0 ? <p>{numCartItems}</p> : null}
+                                </button>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
