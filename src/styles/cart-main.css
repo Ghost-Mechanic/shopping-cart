@@ -6,6 +6,8 @@ main {
 
 .empty-cart {
     height: 70vh;
+    font-family: "Open Sans", sans-serif;
+    color: #22313f;
 }
 
 .cart-container {
