@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .item-card {
+    width: 40vw;
     background-color: white;
     border: solid 1px #22313f;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap: 4px;
 }
 
@@ -15,6 +17,9 @@
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-size: 1.25em;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    max-width: 100%; 
 }
 
 .item-image {
@@ -25,6 +30,14 @@
     margin: 0;
     font-family: "Open Sans", sans-serif;
     color: #22313f;
+}
+
+.add-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 
 .add {
@@ -46,10 +59,22 @@
     background-color: #22313f;
     font-size: 0.6em;
     font-family: "Open Sans", sans-serif;
+    height: 20px;
+}
+
+@media (min-width: 768px) {
+    .item-card {
+        width: 20vw;
+    }
+
+    .add-button {
+        height: 28px;
+    }
 }
 
 @media (min-width: 1024px) {
     .item-card {
+        width: 16vw;
         transition: transform .2s;
     }
 
@@ -66,6 +91,7 @@
     }
 
     .add-button {
+        height: 40px;
         width: 80%;
         font-size: 1em;
     }
@@ -74,5 +100,10 @@
 @media (min-width: 1920px) {
     .card-title {
         padding: 8px;
+    }
+
+    .add-button {
+        height: 48px;
+        font-size: 1.25em;
     }
 }
