@@ -10,12 +10,6 @@ function CartMain() {
 
     const tax = (subtotal * 0.10).toFixed(2);
 
-    cart.map((item) => {
-        console.log(item[0].id);
-        console.log(item[0].title);
-        console.log(item.quantity);
-    });
-
     return (
         <>
             <main>

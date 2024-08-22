@@ -1,6 +1,6 @@
 import '../styles/cart-item.css';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function CartItem({ item }) {
@@ -8,19 +8,23 @@ function CartItem({ item }) {
     const [cart, setCart] = useOutletContext();
 
     // change the cart with the new quantity each time numItems is changed
-    useEffect(() => {
-        let newNumItems = Number(numItems);
+    const updateQuantity = (newQuantity) => {
+        if (newQuantity < 0 || newQuantity > 10) {
+            return;
+        }
 
-        const newCart = cart.map((cartItem) => 
-            cartItem[0].id === item[0].id ? {...cartItem, quantity: newNumItems} : cartItem);
+        setNumItems(newQuantity);
 
-        if (newNumItems === 0) {
+        const newCart = cart.map((cartItem) =>
+            cartItem[0].id === item[0].id ? {...cartItem, quantity: newQuantity} : cartItem);
+        
+        if (newQuantity === 0) {
             setCart(cart.filter((cartItem) => cartItem[0].id !== item[0].id));
         }
         else {
             setCart(newCart);
         }
-    }, [numItems, cart, item, setCart]);
+    }
 
     return (
         <>
@@ -29,18 +33,18 @@ function CartItem({ item }) {
                 <img className="cart-item-image" src={item[0].image} alt="" />
                 <h3 className="cart-item-price">${Number(item[0].price).toFixed(2)}</h3>
                 <div className="quantity">
-                    <button className="cart-item-button" onClick={() => numItems > 0 && numItems <= 10 ? setNumItems(Number(numItems) - 1) : null}>-</button>
-                    <input type="number" value={numItems} min="0" max="10" disabled="true" />
-                    <button className="cart-item-button" onClick={() => numItems < 10 && numItems >= 0 ? setNumItems(Number(numItems) + 1) : null}>+</button>
+                    <button className="cart-item-button" onClick={() => updateQuantity(numItems - 1)}>-</button>
+                    <input type="number" value={numItems} min="0" max="10" disabled={true} />
+                    <button className="cart-item-button" onClick={() => updateQuantity(numItems + 1)}>+</button>
                 </div>
-                <button className="remove-button" onClick={() => setNumItems(0)}>Remove from cart</button>
+                <button className="remove-button" onClick={() => updateQuantity(0)}>Remove from cart</button>
             </div>
         </>
     )
 }
 
 CartItem.propTypes = {
-    item: PropTypes.array,
+    item: PropTypes.object,
 };
 
 export default CartItem;

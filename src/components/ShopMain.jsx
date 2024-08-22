@@ -19,7 +19,6 @@ function ShopMain() {
                 console.log(error)
                 setLoading(false)
             });
-
     }, []);
 
     // this function handles items being added to the cart
